@@ -6,7 +6,6 @@ using FinalProject.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Security.Claims;
-
 namespace FinalProject.Controllers
 {
     [Authorize(Roles = "Student")]
@@ -36,10 +35,8 @@ namespace FinalProject.Controllers
             return View(user); // Passes the user model to the view
         }
 
-        // POST: Student/UpdateProfileImage
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> UpdateProfileImage(IFormFile ProfileImage)
+        // GET: Student/EditProfile
+        public async Task<IActionResult> EditProfile()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -47,39 +44,54 @@ namespace FinalProject.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
+            return View(user); // Pass the user model to the edit view
+        }
+
+        // POST: Student/EditProfile
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProfile(ApplicationUser model, IFormFile ProfileImage)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            // Update the user's details but do not allow email editing
+            user.UserName = model.UserName; // Update the user's username
+            user.PhoneNumber = model.PhoneNumber; // Update phone number
+
+            // Handle profile image upload
             if (ProfileImage != null && ProfileImage.Length > 0)
             {
                 try
                 {
-                    // Upload the new profile image and update the user's profile
                     user.Image_URL = await _profileService.UploadProfileImage(ProfileImage, user.Id, user.Image_URL);
-                    var result = await _userManager.UpdateAsync(user);
-
-                    if (result.Succeeded)
-                    {
-                        TempData["SuccessMessage"] = "Profile image updated successfully!";
-                        return RedirectToAction("Profile");
-                    }
-
-                    // Add validation errors to the model state
-                    foreach (var error in result.Errors)
-                    {
-                        ModelState.AddModelError(string.Empty, error.Description);
-                    }
                 }
                 catch (InvalidOperationException ex)
                 {
                     ModelState.AddModelError("ProfileImage", ex.Message);
-                    return View("Profile", user);
+                    return View(model); // Return to edit view with validation errors
                 }
             }
-            else
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
             {
-                ModelState.AddModelError("ProfileImage", "Please select an image to upload.");
+                TempData["SuccessMessage"] = "Profile updated successfully!";
+                return RedirectToAction("Profile");
             }
 
-            return View("Profile", user); // Return the profile view with errors if upload failed
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+
+            return View(model); // Return to edit view with validation errors
         }
+
+
 
 
 
@@ -99,41 +111,6 @@ namespace FinalProject.Controllers
 
             return View("Index", courses);
         }
-
-        // GET: Student/ShowCourse
-        //public async Task<IActionResult> ShowCourse(int courseId)
-        //{
-        //    // Find the course by ID and include the instructor data
-        //    var course = await _context.Courses
-        //        .Include(c => c.Category)
-        //        .Include(c => c.InstructorCourse)
-        //        .ThenInclude(ic => ic.User)
-        //        .FirstOrDefaultAsync(c => c.CourseId == courseId);
-
-        //    if (course == null)
-        //    {
-        //        return NotFound("Course not found.");
-        //    }
-
-        //    var instructorCourse = course.InstructorCourse.FirstOrDefault();
-        //    if (instructorCourse == null)
-        //    {
-        //        return NotFound("No instructor found for this course.");
-        //    }
-
-        //    var instructor = await _userManager.FindByIdAsync(instructorCourse.UserId);
-        //    if (instructor == null)
-        //    {
-        //        return NotFound("Instructor not found.");
-        //    }
-        //    ViewBag.CourseTitle = course.Title;
-        //    ViewBag.CourseDescription = course.Description;
-        //    ViewBag.InstructorName = instructor.UserName;
-        //    ViewBag.CategoryName=course.Category.Name;
-        //    ViewBag.CourseId = courseId;
-        //    ViewBag.Price=course.Price;
-        //    return View();
-        //}
 
 
         public IActionResult ShowCourse(int courseId)
@@ -221,12 +198,6 @@ namespace FinalProject.Controllers
             // Return to the Add view with course details and feedbacks
             return View("ShowCourse", courseWithFeedbacks);
         }
-
-
-
-
-
-
 
 
 

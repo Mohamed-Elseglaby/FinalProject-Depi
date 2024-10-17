@@ -9,123 +9,127 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FinalProject
 build_property.RootNamespace = FinalProject
-build_property.ProjectDir = C:\Users\lenovo\Desktop\DEPI\Finals\New folder\drive-download-20241016T230508Z-001\FinalProject\
+build_property.ProjectDir = C:\Users\SARA\Source\Repos\FinalProject\FinalProject\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\lenovo\Desktop\DEPI\Finals\New folder\drive-download-20241016T230508Z-001\FinalProject
+build_property.MSBuildProjectDirectory = C:\Users\SARA\Source\Repos\FinalProject\FinalProject
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Account/AddRole.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Account/AddRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBZGRSb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Account/AssignRole.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Account/AssignRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBc3NpZ25Sb2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Account/Login.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Account/Register.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/AdminDashboard.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/AssignRole.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/AssignRole.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQXNzaWduUm9sZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/Courses.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/CreateCourse.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/CreateCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/Edit.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Admin/EditCourse.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Admin/EditCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENvdXJzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Course/Index.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Course/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Course/Showcourse.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Course/Showcourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cnNlXFNob3djb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Home/About.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Home/Contact.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Home/Courses.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Home/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb3Vyc2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Home/Index.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Home/Privacy.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Instructor/AddCourse.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Instructor/AddCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxBZGRDb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Instructor/InstructorProfile.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Instructor/InstructorProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdHJ1Y3RvclxJbnN0cnVjdG9yUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Shared/Error.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Student/Enroll.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Student/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Student/Enroll.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxFbnJvbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Student/Index.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Student/Profile.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Student/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Student/ShowCourse.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Student/ShowCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTaG93Q291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/_ViewImports.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/_ViewStart.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lenovo/Desktop/DEPI/Finals/New folder/drive-download-20241016T230508Z-001/FinalProject/Views/Shared/_Layout.cshtml]
+[C:/Users/SARA/Source/Repos/FinalProject/FinalProject/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1iqdgs6srz

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Desktop\\DEPI\\Finals\\New folder\\drive-download-20241016T230508Z-001\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Desktop\\DEPI\\Finals\\New folder\\drive-download-20241016T230508Z-001\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\DEPI\\Finals\\New folder\\drive-download-20241016T230508Z-001\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\DEPI\\Finals\\New folder\\drive-download-20241016T230508Z-001\\FinalProject\\FinalProject.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\DEPI\\Finals\\New folder\\drive-download-20241016T230508Z-001\\FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj",
+        "packagesPath": "C:\\Users\\SARA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SARA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

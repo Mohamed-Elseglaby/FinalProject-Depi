@@ -10,7 +10,6 @@ namespace FinalProject.Models
         [Key]
 
 
-
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
@@ -24,8 +23,7 @@ namespace FinalProject.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        // إضافة خاصية UserId
-        public string UserId { get; set; } // يجب أن يكون من نوع string
+        public string UserId { get; set; } 
         public string LessonTitle { get; set; }
         public string LessonContent { get; set; }
         public ICollection<Lesson> Lessons { get; set; }
