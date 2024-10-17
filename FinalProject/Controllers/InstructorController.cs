@@ -6,6 +6,8 @@ using FinalProject.Services;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting;
 
 
 namespace FinalProject.Controllers
@@ -96,71 +98,44 @@ namespace FinalProject.Controllers
 
 
 
+        //public async Task<IActionResult> Index()
+        //{
+        //    var user = await _userManager.GetUserAsync(User);
+        //    var courses = await _context.Courses
+        //        .Where(c => c.InstructorCourse.Any(ic => ic.UserId == user.Id))
+        //        .ToListAsync();
+
+        //    return View(courses);
+        //}
         public async Task<IActionResult> Index()
         {
-            var user = await _userManager.GetUserAsync(User);
-            var courses = await _context.Courses
-                .Where(c => c.InstructorCourse.Any(ic => ic.UserId == user.Id))
-                .ToListAsync();
-
-            return View(courses);
+            var co = _context.Courses;
+            return View(await co.ToListAsync());
         }
 
-       [HttpGet]
-        public IActionResult AddCourse()
+
+        // GET: Courses/Create
+        public IActionResult Create()
         {
-            ViewBag.Categories = _context.Categories.ToList(); // جلب الفئات من قاعدة البيانات
-            return View(new Course());
+            return View();
         }
-
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SaveAddCourse(Course model)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,DurationTime,VideoURL,ImageURL,CategoryId")] Course course)
         {
-            if (!User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-
-            if (ModelState.IsValid)
-            {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier); // الحصول على معرف المستخدم
-                model.UserId = userId; // إضافة معرف المستخدم إلى الكورس
-
-                // حفظ الكورس في قاعدة البيانات
-                _context.Courses.Add(model);
-                await _context.SaveChangesAsync();
-
-                // إضافة الدرس المرتبط بالكورس
-                var newLesson = new Lesson
-                {
-                    Title = model.LessonTitle, // من الحقل الموجود داخل الـ Course
-                    Content = model.LessonContent, // من الحقل الموجود داخل الـ Course
-                    CourseId = model.Id // استخدم معرف الكورس الجديد
-                };
-                _context.Lessons.Add(newLesson);
-
-                await _context.SaveChangesAsync(); // حفظ الدرس
-
-                return RedirectToAction("Index", "Instructor"); // إعادة التوجيه بعد الحفظ
-            }
-
-            // في حالة وجود أخطاء
-            var errors = ModelState.Values.SelectMany(v => v.Errors);
-            foreach (var error in errors)
-            {
-                Console.WriteLine(error.ErrorMessage); // طباعة الأخطاء إن وجدت
-            }
-
-            // إعادة تحميل الفئات إذا فشل النموذج
-            model.Category = _context.Categories.FirstOrDefault(c => c.Id == model.CategoryId);
-            return View("AddCourse", model); // إعادة عرض النموذج مع البيانات المدخلة
+            _context.Add(course);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(InstructorProfile));
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit(int? id)
         {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             var course = await _context.Courses.FindAsync(id);
             if (course == null)
             {
@@ -168,32 +143,42 @@ namespace FinalProject.Controllers
             }
             return View(course);
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Course model)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,DurationTime,VideoURL,ImageURL,CategoryId")] Course course)
         {
-            if (id != model.Id)
+            if (id != course.Id)
+            {
+                try
+                {
+                    _context.Update(course);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    return NotFound();
+                  
+                }
+                return RedirectToAction(nameof(Create));
+            }
+            return View(course);
+        }
+
+        
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                _context.Update(model);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(model);
-        }
-
-        public async Task<IActionResult> Delete(int id)
-        {
-            var course = await _context.Courses.FindAsync(id);
+            var course = await _context.Courses
+               .FirstOrDefaultAsync(m => m.Id == id);
             if (course == null)
             {
                 return NotFound();
             }
+
             return View(course);
         }
 
@@ -205,12 +190,12 @@ namespace FinalProject.Controllers
             if (course != null)
             {
                 _context.Courses.Remove(course);
-                await _context.SaveChangesAsync();
             }
+
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        
     }
     public class AddCourseViewModel
     {

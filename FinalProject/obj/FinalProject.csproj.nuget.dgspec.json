@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\elmoul\\Desktop\\NewNewNew\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\elmoul\\Desktop\\NewNewNew\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\elmoul\\Desktop\\NewNewNew\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\FinalProject.csproj",
-        "packagesPath": "C:\\Users\\SARA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SARA\\Source\\Repos\\FinalProject\\FinalProject\\obj\\",
+        "projectPath": "C:\\Users\\elmoul\\Desktop\\NewNewNew\\FinalProject\\FinalProject.csproj",
+        "packagesPath": "C:\\Users\\elmoul\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\elmoul\\Desktop\\NewNewNew\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\SARA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\elmoul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,6 +67,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             }
           },
           "imports": [
@@ -84,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

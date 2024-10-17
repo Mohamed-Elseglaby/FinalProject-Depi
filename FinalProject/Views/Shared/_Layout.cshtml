@@ -12,6 +12,7 @@
      <link href="~/css/style.css" rel="stylesheet" asp-append-version="true">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FinalProject.styles.css" asp-append-version="true" />
+
 </head>
 <body>
     <!-- Header Section (Topbar and Navbar) -->
@@ -63,10 +64,23 @@
                     <a href="#" onclick="location.href='@Url.Action("About", "Home")'" class="nav-item nav-link" class="nav-item nav-link">About</a>
                     <a href="#" onclick="location.href='@Url.Action("Index", "Course")'" class="nav-item nav-link">Courses</a>
                     <a href="#" onclick="location.href='@Url.Action("Contact", "Home")'" class="nav-item nav-link">Contact</a>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <!-- If the user is authenticated, show Profile and Logout -->
+                        <a href="@Url.Action("Profile", "Student")" class="nav-item nav-link">Profile</a>
+                        
+                    }
+                    else
+                    {
+                        <!-- If not authenticated, show Register and Login -->
+                        <a href="@Url.Action("Register", "Account")" class="nav-item nav-link">Join Us</a>
+                     
+                    }
                 </div>
                 <a onclick="location.href='@Url.Action("Register", "Account")'" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>
             </div>
         </nav>
+
     </div>
 
     <div>

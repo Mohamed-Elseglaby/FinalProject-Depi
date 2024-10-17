@@ -135,65 +135,66 @@ namespace FinalProject.Controllers
 
             return View("Edit",Student);
         }
-        public IActionResult Courses()
-        {
-            var course = context.Courses.ToList();
+   //     public IActionResult Courses()
+   //     {
+   //         var course = context.Courses.ToList();
 
-            return View(course);
-        }
-        [HttpGet]
-        public IActionResult EditCourse(int Id)
-        {
-            var course = context.Courses.FirstOrDefault(c => c.Id == Id);
-            return View(course);
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult SaveEditCourse(int Id, Course NewCourse)
-        {
-            var oldCourse = context.Courses.FirstOrDefault(c => c.Id == Id);
-            if (oldCourse!=null)
-            {
-                oldCourse.Title = NewCourse.Title;
-                oldCourse.Description = NewCourse.Description;
-                oldCourse.Price = NewCourse.Price;
-                context.SaveChanges();         
-                    return RedirectToAction("Courses");
-            }
-            return View("EditCourse", oldCourse);
-        }
-        public IActionResult DeleteCourse(int Id)
-        {
-            var Course = context.Courses.FirstOrDefault(c => c.Id == Id);
-            context.Remove(Course);
-            context.SaveChanges();
-            return RedirectToAction("Courses");
-        }
-        public IActionResult CreateCourse(Course course)
-        {
+   //         return View(course);
+   //     }
+   //     [HttpGet]
+   //     public IActionResult EditCourse(int Id)
+   //     {
+   //         var course = context.Courses.FirstOrDefault(c => c.Id == Id);
+   //         return View(course);
+   //     }
+   //     [HttpPost]
+   //     [ValidateAntiForgeryToken]
+   //     public IActionResult SaveEditCourse(int Id, Course NewCourse)
+   //     {
+   //         var oldCourse = context.Courses.FirstOrDefault(c => c.Id == Id);
+   //         if (oldCourse!=null)
+   //         {
+   //             oldCourse.Title = NewCourse.Title;
+   //             oldCourse.Description = NewCourse.Description;
+   //             oldCourse.Price = NewCourse.Price;
+   //             context.SaveChanges();         
+   //                 return RedirectToAction("Courses");
+   //         }
+   //         return View("EditCourse", oldCourse);
+   //     }
+   //     public IActionResult DeleteCourse(int Id)
+   //     {
+   //         var Course = context.Courses.FirstOrDefault(c => c.Id == Id);
+   //         context.Remove(Course);
+   //         context.SaveChanges();
+   //         return RedirectToAction("Courses");
+   //     }
+   //     public IActionResult CreateCourse(Course course)
+   //     {
 
-            ViewData["courslist"] = context.Categories.ToList();
-            return View(new Course());
-        }
-        public IActionResult SaveCreateCourse(Course course)
-        {
-            if (course != null)
-            {
-                context.Courses.Add(course);
-                context.SaveChanges();
-                return RedirectToAction("Courses");
+   //         ViewData["courslist"] = context.Categories.ToList();
+   //         return View(new Course());
+   //     }
+   //     public IActionResult SaveCreateCourse(Course course)
+   //     {
+   //         if (course != null)
+   //         {
+   //             context.Courses.Add(course);
+   //             context.SaveChanges();
+   //             return RedirectToAction("Courses");
 
-            }
-			ViewData["courslist"] = context.Categories.ToList();
-			return View("CreateCourse" , course);
-        }
+   //         }
+			//ViewData["courslist"] = context.Categories.ToList();
+			//return View("CreateCourse" , course);
+   //     }
         public IActionResult AssignRole() => View();
         [HttpPost]
         public async Task<IActionResult> AssignRole(string RoleName, string UserName)
 		{
 			var user = await userManager.FindByNameAsync(UserName);
+            var ui = await userManager.RemoveFromRoleAsync(user,"Student");
 			var result = await userManager.AddToRoleAsync(user, RoleName);
-			return View();
+			return RedirectToAction("AdminDashboard");
 		}
 
 	}

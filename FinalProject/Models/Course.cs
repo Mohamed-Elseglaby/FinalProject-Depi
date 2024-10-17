@@ -23,9 +23,6 @@ namespace FinalProject.Models
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        public string UserId { get; set; } 
-        public string LessonTitle { get; set; }
-        public string LessonContent { get; set; }
         public ICollection<Lesson> Lessons { get; set; }
         public ICollection<Enrollment> Enrollments { get; set; }
         public ICollection<Exam> Exams { get; set; }
