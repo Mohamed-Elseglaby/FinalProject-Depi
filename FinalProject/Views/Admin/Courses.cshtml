@@ -1,0 +1,31 @@
+﻿@model IEnumerable<FinalProject.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h1>Courses</h1>
+<a asp-action="CreateCourse" asp-controller="Admin">Create</a>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Descraption</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="col">@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Price</td>
+            <td><a href="/Admin/DeleteCourse/@item.Id"><button>Delete</button></a> </td>
+            <td><a href="/Admin/EditCourse/@item.Id"><button>Edit</button></a> </td>
+
+        </tr>
+    }
+
+</table>

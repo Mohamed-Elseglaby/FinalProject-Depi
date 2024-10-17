@@ -1,0 +1,22 @@
+﻿@model FinalProject.ViewModel.StudentViewModel
+<h1>Edit</h1>
+<form asp-action="SaveEdit" asp-controller="Admin" >
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="phone"></label>
+        <input asp-for="phone" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+   
+
+    <input type="submit" value="Add" class="btn-success" />
+
+</form>

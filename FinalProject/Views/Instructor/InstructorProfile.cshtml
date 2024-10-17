@@ -1,0 +1,50 @@
+﻿@model ApplicationUser
+
+<h2>@Model.UserName's Profile</h2>
+
+<div class="profile-container" style="display: flex; flex-direction: column; align-items: center;">
+    <div class="profile-info">
+        <h4>Name: @Model.UserName</h4>
+        <h4>Email: @Model.Email</h4>
+    </div>
+
+    <div class="profile-image" style="margin-top: 20px;">
+        <h4>Profile Image</h4>
+        @if (string.IsNullOrEmpty(Model.Image_URL))
+        {
+            <img src="~/images/default-profile.png" alt="Default Profile Image" width="200" height="200" />
+        }
+        else
+        {
+            <img src="@Model.Image_URL" alt="Profile Image" width="200" height="200" />
+        }
+    </div>
+
+    <form asp-action="UpdateProfile" method="post" enctype="multipart/form-data" style="margin-top: 30px;">
+        <div style="margin-bottom: 15px;">
+            <label>Upload New Profile Image</label>
+            <input type="file" name="ProfileImage" accept="image/png, image/jpeg" />
+        </div>
+
+        <div style="margin-bottom: 15px;">
+            <label>Description</label>
+            <textarea asp-for="Description" style="width: 300px; height: 100px;"></textarea>
+        </div>
+        <a href="/Instructor/AddCourse" class="btn btn-primary">Add Course</a> 
+        <button type="submit" class="btn btn-primary">Update Profile</button>
+    </form>
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <p>@error.ErrorMessage</p>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,40 @@
+﻿@model Course
+@{
+	List<Category> cor = new List<Category>();
+	cor = (List<Category>)ViewData["courslist"];
+}
+<form asp-action="SaveCreateCourse" asp-controller="Admin">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+	<label asp-for="CategoryId"></label>
+	<select name="CategoryId" class="form-control">
+		@foreach (var item in cor)
+		{
+			if (Model.Id == item.Id)
+			{
+				<option value="@item.Id" selected>@item.Name</option>
+			}
+			else
+			{
+				<option value="@item.Id">@item.Name</option>
+			}
+
+
+		}
+
+	</select>
+
+    <input type="submit" value="Add" class="btn-success" />
+
+</form>

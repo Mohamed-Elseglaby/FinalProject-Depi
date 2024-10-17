@@ -1,0 +1,22 @@
+﻿@model Course
+<h1>Edit</h1>
+<form asp-action="SaveEditCourse" asp-controller="Admin">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+
+
+    <input type="submit" value="Add" class="btn-success" />
+
+</form>

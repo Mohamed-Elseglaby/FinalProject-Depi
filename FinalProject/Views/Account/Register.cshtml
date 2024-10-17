@@ -1,0 +1,78 @@
+﻿@model ApplicationUser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";  // Path to the layout file
+}
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - My E-Learning Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include Bootstrap CSS and other necessary stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-lg border-0 rounded-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h2 class="card-title"  style="color:white;">Register</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form method="post" asp-action="Register">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group mb-3">
+                                <label asp-for="UserName" class="form-label"></label>
+                                <input asp-for="UserName" class="form-control" placeholder="Enter your username" />
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Email" class="form-label"></label>
+                                <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="PhoneNumber" class="form-label"></label>
+                                <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your phone number" />
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="Password" class="form-label">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Enter your password" />
+                                @Html.ValidationMessage("Password", "", new { @class = "text-danger" })
+                            </div>
+
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                        </form>
+
+                        <button class="btn btn-link mt-3 w-100 text-center" onclick="location.href='@Url.Action("Login", "Account")'">
+                            Already have an account? Login here
+                        </button>
+
+                        @if (ViewBag.status == 1)
+                        {
+                                <div class="alert alert-danger mt-3">
+                                @ViewBag.message
+                                </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include necessary scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
