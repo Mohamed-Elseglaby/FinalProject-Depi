@@ -34,7 +34,6 @@ body {
   font-family: 'Jost', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--darkblue-color);
 }
 
 header {
@@ -42,14 +41,6 @@ header {
   color: var(--sky-color);
   padding: 20px 0;
   text-align: center;
-}
-
-.container {
-  width: 100%;
-  background-color: var(--sky-color);
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .data {
@@ -99,9 +90,6 @@ header {
   transition: color 0.3s ease;
 }
 
-.admin-tasks ul li a:hover {
-  color: #333;
-}
 
 .icon {
   margin-bottom: 40px;
@@ -188,32 +176,11 @@ button {
   z-index: 3;
 }
 
-button::before {
-  content: " ";
-  width: 0;
-  height: 100%;
-  
-  background-image: linear-gradient(
-    to right,
-    var(--darkblue-color),
-    var(--gradient1),
-    var(--gradient2),
-    var(--sky-color)
-  );
-  transition: 0.3s;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-}
 
 button:hover::before {
   width: 100%;
 }
 
-button:hover {
-  background-color: transparent;
-}
 
 @media (max-width: 768px) {
   .icon {
@@ -246,12 +213,6 @@ button:hover {
   background-size: 12px 12px;
   animation: l12 1s infinite;
 }
-.loader::before {
-  margin: 4px;
-  filter: hue-rotate(45deg);
-  background-size: 8px 8px;
-  animation-timing-function: linear;
-}
 
 @keyframes l12 {
   100% {
@@ -280,29 +241,7 @@ button:hover {
   z-index: 2;
 }
 
-.icon button::before {
-  content: " ";
-  background-image: linear-gradient(
-    to right,
-    var(--darkblue-color),
-    var(--gradient1),
-    var(--gradient2),
-    var(--sky-color)
-  );
-  width: 0;
-  height: 100%;
-  
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  transition: 0.3s;
-}
-
 .icon button:hover::before {
   width: 100%;
 }
 
-.icon button:hover {
-  background-color: transparent;
-}
