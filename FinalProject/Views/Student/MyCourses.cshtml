@@ -1,0 +1,22 @@
+﻿@model IEnumerable<FinalProject.Models.Enrollment>
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <h1 class="display-4">My Courses</h1>
+        <div class="row">
+            @foreach (var enrollment in Model)
+            {
+                <div class="col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="~/img/@enrollment.Course.ImageURL" class="card-img-top" alt="Course Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@enrollment.Course.Title</h5>
+                            <p class="card-text">@enrollment.Course.Description</p>
+                            <a href="@Url.Action("ViewCourse", "Student", new { id = enrollment.CourseId })" class="btn btn-primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Source\\Repos\\DEPI-Final\\FinalProject\\FinalProject.csproj": {}
+    "C:\\Users\\ASUS\\Downloads\\New folder (15)\\Mohamed Esalyed Edit + Enrollments Courses\\FinalProject\\FinalProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Source\\Repos\\DEPI-Final\\FinalProject\\FinalProject.csproj": {
+    "C:\\Users\\ASUS\\Downloads\\New folder (15)\\Mohamed Esalyed Edit + Enrollments Courses\\FinalProject\\FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\DEPI-Final\\FinalProject\\FinalProject.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Downloads\\New folder (15)\\Mohamed Esalyed Edit + Enrollments Courses\\FinalProject\\FinalProject.csproj",
         "projectName": "FinalProject",
-        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\DEPI-Final\\FinalProject\\FinalProject.csproj",
+        "projectPath": "C:\\Users\\ASUS\\Downloads\\New folder (15)\\Mohamed Esalyed Edit + Enrollments Courses\\FinalProject\\FinalProject.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\DEPI-Final\\FinalProject\\obj\\",
+        "outputPath": "C:\\Users\\ASUS\\Downloads\\New folder (15)\\Mohamed Esalyed Edit + Enrollments Courses\\FinalProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",

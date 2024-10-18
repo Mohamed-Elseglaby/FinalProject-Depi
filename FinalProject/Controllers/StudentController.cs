@@ -125,22 +125,58 @@ namespace FinalProject.Controllers
 
 
         //Enroll
-        public IActionResult Enroll(int courseId)
+        public async Task<IActionResult> Enroll(int courseId)
         {
-            // Retrieve the course based on the given courseId
-            Course selectedCourse = _context.Courses
-                                           .FirstOrDefault(c => c.Id == courseId);
-
-            // Check if the course exists
-            if (selectedCourse == null)
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
             {
-                return NotFound("Course not found.");
+                return RedirectToAction("Login", "Account");
             }
 
-            // Return the view with the selected course as the model
-            return View(selectedCourse);
+            // Check if the user is already enrolled in the course
+            var existingEnrollment = await _context.Enrollments
+                .FirstOrDefaultAsync(e => e.CourseId == courseId && e.UserId == user.Id);
+
+            if (existingEnrollment == null)
+            {
+                var enrollment = new Enrollment
+                {
+                    CourseId = courseId,
+                    UserId = user.Id,
+                    EnrollmentDate = DateTime.Now
+                };
+
+                _context.Enrollments.Add(enrollment);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction("MyCourses", "Student");
         }
 
+        [Authorize]
+        public async Task<IActionResult> MyCourses()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var enrollments = await _context.Enrollments
+                .Include(e => e.Course)
+                .Where(e => e.UserId == user.Id)
+                .ToListAsync();
+
+            return View(enrollments);
+        }
+
+        public async Task<IActionResult> ViewCourse(int id)
+        {
+            var course = await _context.Courses
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            return View(course); // Return the course details view
+        }
 
 
 

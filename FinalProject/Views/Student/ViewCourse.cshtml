@@ -1,0 +1,158 @@
+﻿@model FinalProject.Models.Course
+
+
+<div class="container py-5">
+<div class="course-video">
+    <h2>@Model.Title</h2>
+    <div class="video-container">
+        <video controls autoplay muted>
+            <source src="@Url.Content("~/img/vidoes/" + @Model.VideoURL)" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+<br />
+    <p>@Model.Description</p>
+
+<!-- Add Feedback Form Section -->
+<div class="feedback-form">
+    <h3>Add Your Feedback</h3>
+    <form asp-action="AddFeedback" asp-controller="Student" method="post">
+        <input type="hidden" name="courseId" value="@Model.Id" />
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea name="comment" class="form-control" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating (1-5):</label>
+            <input type="number" name="rating" class="form-control" min="1" max="5" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Feedback</button>
+    </form>
+</div>
+</div>
+</div>
+<!-- Custom Styling -->
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    .course-container {
+        max-width: 900px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .course-detail {
+        padding: 20px;
+        background-color: #fafafa;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+    }
+
+    .course-title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .course-description {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .course-price {
+        color: #28a745;
+        font-weight: bold;
+    }
+
+    .course-category {
+        color: #007bff;
+    }
+
+    video{
+        width:100%;
+    }
+
+</style>
+
+
+<style>
+
+    .feedback-section {
+           margin-top: 30px;
+       }
+
+       .feedback-list .feedback-card {
+           background-color: #f9f9f9;
+           padding: 15px;
+           margin-bottom: 10px;
+           border-radius: 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+           border-left: 4px solid #007bff;
+       }
+
+       .feedback-card p {
+           margin: 0 0 5px;
+       }
+
+       .feedback-rating span {
+           font-weight: bold;
+           color: #ffc107;
+       }
+
+       .feedback-form {
+           margin-top: 40px;
+           background-color: #f7f7f7;
+           padding: 20px;
+           border-radius: 8px;
+           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+
+           .feedback-form h3 {
+               margin-bottom: 20px;
+           }
+
+           .feedback-form .form-group {
+               margin-bottom: 15px;
+           }
+
+           .feedback-form .form-control {
+               padding: 10px;
+               font-size: 1rem;
+               border-radius: 5px;
+               border: 1px solid #ccc;
+           }
+
+       .btn-primary {
+           background-color: #007bff;
+           border: none;
+           padding: 10px 20px;
+           border-radius: 5px;
+           color: #fff;
+           font-size: 1rem;
+           cursor: pointer;
+       }
+
+       .btn-secondary {
+           background-color: #6c757d;
+           border: none;
+           padding: 10px 20px;
+           border-radius: 5px;
+           color: #fff;
+           font-size: 1rem;
+           cursor: pointer;
+       }
+
+           .btn-primary:hover, .btn-secondary:hover {
+               opacity: 0.9;
+           }
+
+</style>
+

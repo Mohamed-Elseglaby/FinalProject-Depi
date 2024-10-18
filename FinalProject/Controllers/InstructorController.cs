@@ -107,6 +107,33 @@ namespace FinalProject.Controllers
 
         //    return View(courses);
         //}
+        [HttpPost]
+        public async Task<IActionResult> DeleteProfileImage()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                // Log if user is null
+                Console.WriteLine("User is null");
+                return Json(new { success = false });
+            }
+
+            // Remove the image URL from the user profile
+            user.Image_URL = null;
+
+            var result = await _userManager.UpdateAsync(user);
+            if (result.Succeeded)
+            {
+                // Log success
+                Console.WriteLine("Profile image deleted successfully");
+
+            }
+
+            // Log failure
+            Console.WriteLine("Failed to delete profile image");
+            return RedirectToAction("EditProfile", "Student");
+
+        }
         public async Task<IActionResult> Index()
         {
             var co = _context.Courses;

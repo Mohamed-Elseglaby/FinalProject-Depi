@@ -1,4 +1,6 @@
-﻿<div class="container-fluid py-5">
+﻿@using System.Linq
+@model Course
+<div class="container-fluid py-5">
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
@@ -46,3 +48,102 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Feedback Section -->
+<div class="feedback-section">
+    <h3>Feedbacks</h3>
+    <div class="feedback-list">
+        @if (Model.Feedbacks != null && Model.Feedbacks.Any())
+        {
+            foreach (var feedback in Model.Feedbacks)
+            {
+                <div class="feedback-card">
+                    <p><strong>@(feedback.User != null ? feedback.User.UserName : "Unknown User"):</strong></p>
+                    <p>@feedback.Comment</p>
+                    <p class="feedback-rating">Rating: <span>@feedback.Rating</span>/5</p>
+                </div>
+                <hr />
+            }
+        }
+        else
+        {
+            <p>No feedback available for this course.</p>
+        }
+    </div>
+</div>
+
+
+<style>
+
+    .feedback-section {
+        margin-top: 30px;
+    }
+
+    .feedback-list .feedback-card {
+        background-color: #f9f9f9;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #007bff;
+    }
+
+    .feedback-card p {
+        margin: 0 0 5px;
+    }
+
+    .feedback-rating span {
+        font-weight: bold;
+        color: #ffc107;
+    }
+
+    .feedback-form {
+        margin-top: 40px;
+        background-color: #f7f7f7;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        .feedback-form h3 {
+            margin-bottom: 20px;
+        }
+
+        .feedback-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .feedback-form .form-control {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            opacity: 0.9;
+        }
+
+</style>
